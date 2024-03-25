@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Login</title>
+</head>
+<body>
+
+    <form action="/loginProcess" method="post" name="loginForm">
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        <h2>로그인</h2>
+            <div>
+                <input type="text" name="username" placeholder="id"/>
+            </div>
+            <div>
+                <input type="password" name="passwd" placeholder="passwd"/>
+            </div>
+
+            <button type="submit">로그인</button>
+            <button type="button" onclick="location.href='signup'">회원가입</button>
+    </form>
+
+
+    <!-- <input type="button" id="submit" value="click">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        let data1 = [{'username':'123','password':'123'}];
+        $(document).ready(function(){
+            $('#submit').click(function(){   
+                $.ajax({
+                    type:'post',   //post 방식으로 전송
+                    url:'/loginProcess',   //데이터를 주고받을 파일 주소
+                    data: JSON.stringify(data1),   //위의 변수에 담긴 데이터를 전송해준다.
+                    dataType:'application/json',   //html 파일 형식으로 값을 담아온다.
+                    success: function(data1){
+                        console.log(data1);
+                    },
+                    error: function (request, status, error) {
+                        console.log("code: " + request.status)
+                        console.log("message: " + request.responseText)
+                        console.log("error: " + error);
+                    }                    
+                });
+            });
+        });
+
+    </script> -->
+</body>
+</html>

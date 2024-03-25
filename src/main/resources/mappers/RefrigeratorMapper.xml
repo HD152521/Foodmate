@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.seong.foodmate.foodmate.mapper.RefrigeratorMapper">
+    <select id="showIngredient" parameterType="string" resultType="com.seong.foodmate.foodmate.vo.RefrigeratorVO">
+        SELECT * FROM refrigerator WHERE user_id = #{user_id}
+    </select>
+
+    <insert id="putIngredient">
+        INSERT INTO refrigerator
+            (user_id, ingredient)
+        VALUES
+            (#{user_id}, #{ingredient})
+    </insert>
+
+</mapper>

@@ -1,0 +1,36 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <h2>포스트 작성</h2>
+        <form action="/post/addPostProcess" method="post">       
+            <!-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> -->
+            <div>
+                <input type="text" name="title" placeholder="title"/>
+            </div>
+            <div>
+                <input type="text" name="content" placeholder="content"/>
+            </div>
+    
+            <div>
+                <input type="text" name="latitude" placeholder="latitude"/>
+            </div>
+    
+            <div>
+                <input type="text" name="longitude" placeholder="longitude"/>
+            </div>
+
+
+            <br><br><br><br><br>
+            <div>
+                <input type="text" name="menu" placeholder="menu"/>
+            </div>
+            <div>
+                <input type="text" name="orderTime" placeholder="orderTime"/>
+            </div>
+            <div>
+                <input type="number" name="deliveryFee" placeholder="deliveryFee"/>
+            </div>
+            <button type="submit">글 작성</button>
+        </form>
+    </body>
+
+</html>

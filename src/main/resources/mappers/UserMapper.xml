@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 서버 mysql  -->
+
+<mapper namespace="com.seong.foodmate.foodmate.mapper.UserMapper" >
+    
+    <select id="getUserById" parameterType="string" resultType="com.seong.foodmate.foodmate.vo.UserVO">
+        SELECT * FROM user WHERE id = #{id}
+    </select>
+
+    <!-- <select id="getUserList" resultType="package main.java.com.seong.foodmate.foodmate.vo.UserVO">
+        SELECT * FROM User order by num
+    </select> -->
+
+    <!-- 회원가입 -->
+    <insert id="insertUser">
+        INSERT INTO user
+            (id, passwd, name, nickname,email,birth,role, joindate)
+        VALUES
+            (#{id}, #{passwd}, #{name},#{nickname}, #{email},#{birth}, #{role},#{joindate})
+    </insert>
+</mapper>
+
+<!-- local mysql(test용) -->
+
+<!-- <mapper namespace="com.seong.foodmate.foodmate.mapper.UserMapper" >
+    
+    <select id="getUserById" parameterType="string" resultType="com.seong.foodmate.foodmate.vo.UserVO">
+        SELECT * FROM user WHERE id = #{id}
+    </select>
+
+    밑에꺼 안씀
+    <select id="getUserList" resultType="package main.java.com.seong.foodmate.foodmate.vo.UserVO">
+        SELECT * FROM User order by num
+    </select> 
+
+    <insert id="insertUser">
+        INSERT INTO user
+            (id, passwd, name, joindate,role)
+        VALUES
+            (#{id}, #{passwd}, #{name}, #{joindate},#{role})
+    </insert>
+</mapper> -->
+
+
